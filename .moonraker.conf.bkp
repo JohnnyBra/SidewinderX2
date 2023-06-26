@@ -74,6 +74,14 @@ install_script = install.sh
 managed_services = 
 	moonraker-obico
 
+[wled aro]
+type = http
+address = 192.168.1.165
+initial_red = 0.5
+initial_green = 0.4
+initial_blue = 0.3
+chain_count = 10
+
 [update_manager crowsnest]
 type = git_repo
 path = ~/crowsnest
@@ -85,5 +93,11 @@ install_script = tools/pkglist.sh
 type = git_repo
 path = ~/klipper-led_effect
 origin = https://github.com/julianschill/klipper-led_effect.git
+is_system_service = False
+
+[update_manager 3dwork-klipper]
+type = git_repo
+path = ~/printer_data/config/3dwork-klipper
+origin = https://github.com/3dwork-io/3dwork-klipper.git
 is_system_service = False
 
