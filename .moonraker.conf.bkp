@@ -77,9 +77,9 @@ managed_services =
 [wled aro]
 type = http
 address = 192.168.1.165
-initial_red = 0.5
-initial_green = 0.4
-initial_blue = 0.3
+initial_red = 0.0
+initial_green = 0.0
+initial_blue = 0.0
 chain_count = 10
 
 [update_manager crowsnest]
