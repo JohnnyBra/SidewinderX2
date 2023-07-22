@@ -6,6 +6,7 @@ klippy_uds_address = ~/printer_data/comms/klippy.sock
 
 [file_manager]
 enable_object_processing = False
+queue_gcode_uploads = True
 
 [authorization]
 cors_domains = 
@@ -21,6 +22,9 @@ trusted_clients =
 	192.168.0.0/16
 	FE80::/10
 	::1/128
+
+[job_queue]
+load_on_startup = True
 
 [octoprint_compat]
 
@@ -80,7 +84,15 @@ address = 192.168.1.165
 initial_red = 0.0
 initial_green = 0.0
 initial_blue = 0.0
-chain_count = 10
+chain_count = 18
+
+[wled matrix]
+type = http
+address = 192.168.1.166
+initial_red = 0.0
+initial_green = 0.0
+initial_blue = 0.0
+chain_count = 256
 
 [update_manager crowsnest]
 type = git_repo
@@ -100,4 +112,14 @@ type = git_repo
 path = ~/printer_data/config/3dwork-klipper
 origin = https://github.com/3dwork-io/3dwork-klipper.git
 is_system_service = False
+
+[power impresora]
+type = homeassistant
+protocol = http
+address = 192.168.1.168
+port = 8123
+device = switch.elarboldenavidad_socket_1
+token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyNWFiMjY1YjRkOGQ0ZjVjYWQ2NDc5MWQ2YmY4NGM0ZSIsImlhdCI6MTY4OTM1MTY0MiwiZXhwIjoyMDA0NzExNjQyfQ.HgqzCU9W1xF4p6fQewFIs1459RrvH4gS8dnN3jTgdIQ
+domain = switch
+on_when_job_queued = True
 
